@@ -88,8 +88,8 @@ export default {
 </script>
 <style scoped>
     .header {
+        min-width: 1000px;
         position: relative;
-        box-sizing: border-box;
         width: 100%;
         height: 34px;
         font-size: 22px;
