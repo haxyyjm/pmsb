@@ -51,10 +51,10 @@ export default {
                 },
                 series: [
                     {
-                        name: '访问来源',
+                        name: '酒店房态',
                         type: 'pie',
                         radius: '85%',
-                        center: ['53%', '48%'],
+                        center: ['53%', '46%'],
                         data: [
                             {value: 335, name: '净房'},
                             {value: 310, name: '脏房'},

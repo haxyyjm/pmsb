@@ -26,6 +26,9 @@
 
 <style scoped lang="less">
   .main-app {
+    height: 100%;
+    width: 100%;
+    min-width: 960px;
     padding: 5px
   }
 </style>

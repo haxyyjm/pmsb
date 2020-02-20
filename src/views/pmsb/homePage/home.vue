@@ -21,14 +21,12 @@
                     <div class="right-content_1">
                         <div class="little-box">客房统计图</div>
                         <div class="chart_left">
-                            <div class="pie_chart_container">
-                                 <pie-chart width="100%" height="100%"></pie-chart>
-                            </div>
+                            <pie-chart width="100%" height="100%"></pie-chart>
                         </div>
                     </div>
                     <div class="right-content_2">
                         <div class="chart_right">
-                            右边图
+                            <bar-chart width="100% " height="100%"></bar-chart>
                         </div>
                     </div>
                 </div>
@@ -38,7 +36,7 @@
             <div class="container-end">
                 <el-tabs v-model="activeName" type="card"  @tab-click="handleClick">
                     <el-tab-pane label="本日订单" name="first">
-                        <el-table :header-cell-style="{fontWeight: '400', color: 'rgba(34,34,34,1)'}" :data="tableData" style="width: 100%" height="310">
+                        <el-table :header-cell-style="{fontWeight: '400', color: 'rgba(34,34,34,1)'}" :data="tableData" style="width: 100%">
                             <el-table-column type="index" label="序号" width="120"></el-table-column>
                             <el-table-column prop="date" label="日期" width="120"></el-table-column>
                             <el-table-column prop="name" label="姓名" width="120"></el-table-column>
@@ -64,9 +62,11 @@
 
 <script>
 import PieChart from './pieChart'
+import BarChart from './barChart'
 export default {
     components: {
-        PieChart
+        PieChart,
+        BarChart
     },
     data(){
         return {
@@ -98,7 +98,11 @@ export default {
 </style>
 <style lang="less" scoped>
     .home-container{
-        min-width: 800px;
+       /* width: 100%; 设置版心宽度*/
+        width: 1500px; 
+        margin: 0 auto;
+        min-width: 960px;
+        height: 100%; //标记
         .home-container-top{
             .right-content-wrapper, .left-content-wrapper{
                 padding: 0px 5px;
@@ -136,15 +140,29 @@ export default {
                 height: 240px;
                 border: 2px solid rgba(204,204,204,1);;
             }
+            // 容纳统计图
             .right-content{
                 width: 100%;
                 height: 240px;
                 border:2px solid rgba(68,136,233,1);
                 position: relative;
                 display: flex;
+                .right-content_2{
+                    flex: 1;
+                    overflow-x: auto;
+                    .chart_right{
+                        width: 100%;
+                        padding: 16px 27px;
+                        height: 100%;
+                    }
+                }
                 .right-content_1{
-                    .pie_chart_container{
-                        height: 200px;
+                    // flex: 1;
+                    width: 340px;
+                    .chart_left{
+                        width: 100%;
+                        padding: 30px 27px;
+                        height: 100%;
                     }
                     .little-box{
                         position: absolute;
@@ -158,30 +176,21 @@ export default {
                         font-weight:400;
                         color:rgba(255,255,255,1);
                     }
-                    // flex: 1;
-                    width: 400px;
-                }
-                .right-content_2{
-                    flex: 1;
-                }
-                .chart_left{
-                    padding: 30px 27px;
-                    border: 1px solid;
-                    height: 100%;
-                }
-                .chart_right{
-                    padding: 16px 27px;
-                    border: 1px solid;
-                    height: 100%;
                 }
             }
+        }
+        .home-container-end.el-row{
+            height:  calc(100% - 240px); //标记
+            // height: 100%;
         }
         .home-container-end{
             padding: 5px 5px;
             .container-end{
-                height: 360px;
+                // height: 360px;
+                // height: 100%;
                 width: 100%;
                 border:2px solid rgba(137,87,161,1);
+                height: calc(100% - 80px); //标记
             }
         }
     }

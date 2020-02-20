@@ -24,12 +24,13 @@
 </script>
 <style scoped lang="less">
 .app-wrapper {
-  position: absolute;
-  width: 100%;
   height: 100%;
-  min-width: 800px;
+  position: absolute;
+  width: 100%; /* 主容器 */
+  min-width: 960px;
   .main-container {
     // padding-left: 201px;
+    height: calc(100% - 34px);
     padding-top: 2px;
   }
 }

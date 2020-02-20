@@ -1,14 +1,14 @@
 <template>
     <div class="container-wrap">
         <ul>
-            <li>
+            <router-link :to="{name: 'roomStatus'}" tag="li">
                 <i class="el-icon-s-goods"></i>
                 <span>房态</span>
-            </li>
-            <li>
+            </router-link>
+            <router-link :to="{name: 'roomStatus'}" tag="li">
                 <i class="el-icon-s-goods"></i>
                 <span>房务</span>
-            </li>
+            </router-link>
             <li>
                 <i class="el-icon-s-goods"></i>
                 <span>账务</span>
@@ -58,9 +58,13 @@ export default {
 
 <style lang="less" scoped>
     .container-wrap{
+        width: 100%;
+       /* width: 100%; 设置版心宽度*/
+        // width: 1500px; 
+        // margin: 0 auto;
+        min-width: 960px;
         position: fixed;
         bottom:0;
-        width:100%;
         height:78px;   /* 底部高度 */
         ul{
             display: flex;

@@ -34,6 +34,11 @@ const routes = [
         name: 'home',
         component: () => import('@/views/pmsb/homePage/home'),
         meta: {title: '首页'}
+      },{
+        path: '/roomStatus',
+        name: 'roomStatus',
+        component: () => import('@/views/pmsb/roomStatus/roomStatus'),
+        meta: {title: '房态'}
       }
     ]
   }

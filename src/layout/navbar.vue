@@ -3,13 +3,13 @@
         <!-- 折叠按钮 -->
         <div class="leftContent">
           <ul class="leftContent_wrap">
-            <li><span class="icon-flag"><i class="el-icon-back"></i></span>返回</li>
+            <li @click="$router.back(-1)" class="pointer-flag"><span class="icon-flag"><i class="el-icon-back"></i></span>返回</li>
             <li><span class="icon-flag"><i class="el-icon-s-home"></i></span>主页</li>
             <li>
               <el-input
                 size="mini"
                 placeholder="请输入内容"
-                suffix-icon="el-icon-search"
+                prefix-icon="el-icon-search"
                 v-model="input1">
               </el-input>
             </li>
@@ -88,9 +88,12 @@ export default {
 </script>
 <style scoped>
     .header {
-        min-width: 1000px;
+        /* 主容器 */
+        /* width: 100%; 设置版心宽度*/
+        width: 1500px; 
+        margin: 0 auto;
+        min-width: 960px;
         position: relative;
-        width: 100%;
         height: 34px;
         font-size: 22px;
         padding-left: 4px;
@@ -141,6 +144,9 @@ export default {
       height: 30px;
       li{
         padding: 3px 4px;
+      }
+      .pointer-flag{
+        cursor: pointer;
       }
     }
 </style>

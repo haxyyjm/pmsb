@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-//集中管理css (针对公共的)
+//集中管理css (针对公共的)=》包括引入阿里矢量库
 import '@/assets/css/index'
 import axios from 'axios'
 import ElementUI from 'element-ui'
