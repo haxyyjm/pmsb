@@ -14,7 +14,7 @@
               </li>
               <li class="li_flag">
                 <span>楼层筛选:</span>
-                <el-select v-model="value" placeholder="请选择">
+                <el-select class="select-flag" v-model="value" placeholder="请选择">
                   <el-option
                     v-for="item in options"
                     :key="item.value"
@@ -69,9 +69,9 @@
             </ul>
           </div>
         </el-header>
-        <el-container style="height: 100%">
+        <el-container style="height: 96%">
           <el-main>
-            <div class="room_flag">
+            <div class="el-main-container">
               <el-col  :span="2" v-for="(item, index) of room_data" :key="index">
                 <div class="boxActive">
                 </div>
@@ -82,15 +82,27 @@
             <div class="aside-container">
               <ul>
                 <li>
-                  <i class="iconfont icontuding"></i>
+                  <i class="iconfont icon-renyuandengji"></i>
                   登记
                 </li>
-                <li>预定</li>
-                <li>公安</li>
-                <li>制卡</li>
+                <li>
+                  <i class="iconfont icon-weibiaoti-"></i>
+                  预定
+                </li>
+                <li>
+                  <i class="iconfont icon-gongan"></i>
+                  公安
+                </li>
+                <li>
+                  <i class="iconfont icon-zhiqia"></i>
+                  制卡
+                </li>
               </ul>
               <div class="aside-end">
-                <div>改房态</div>
+                <div>
+                  <i class="iconfont icon-xiugai"></i>
+                  改房态
+                </div>
               </div>
             </div>
           </el-aside>
@@ -118,7 +130,7 @@ export default {
     }
   },
   mounted(){
-    this.room_data = new Array(20)
+    this.room_data = new Array(20).fill(null)
   },
   methods: {
 
@@ -132,8 +144,14 @@ export default {
       width: 200px;
       border-radius: 0px;
     }
-  .li_flag >>>.el-input__suffix{
+  /* .li_flag >>>.el-input__suffix{
     top: 7px;
+  } */
+  .li_flag>>> .el-input__icon{
+    line-height: 10px;
+  }
+  .select-flag{
+    
   }
 </style>
 <style lang="less" scoped>
@@ -216,21 +234,29 @@ export default {
       background-color: #EEEEEE;
       color: #333;
       .aside-container{
+        .iconfont{
+          font-size: 35px;
+        }
         font-size:13px;
         font-family:PingFang SC;
         font-weight:400;
         color:rgba(255,255,255,1);
-        height: 99%;
+        height: 98%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
         ul>li, .aside-end>div{
+          cursor: pointer;
           width: 60px;
           height: 60px;
           border-radius:4px;
           background-color: #3A85E1;
           margin-top: 3px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
         }
       }
     }
@@ -240,12 +266,13 @@ export default {
       padding: 3px;
       border:2px solid rgba(68,136,233,1);
       color: #333;
-      .room_flag{
+      .el-main-container{
+        height: 90%;
         .boxActive{
           height: 80px;
           margin: 1px 4px 4px 1px; //上右下左
           cursor: pointer;
-          background-color: #58D56D;
+          background-color: #0367A6;
           border-radius: 5px;
         }
       }

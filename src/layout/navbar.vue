@@ -4,7 +4,7 @@
         <div class="leftContent">
           <ul class="leftContent_wrap">
             <li @click="$router.back(-1)" class="pointer-flag"><span class="icon-flag"><i class="el-icon-back"></i></span>返回</li>
-            <li><span class="icon-flag"><i class="el-icon-s-home"></i></span>主页</li>
+            <li @click="$router.push('/home')" class="pointer-flag"><span class="icon-flag"><i class="el-icon-s-home"></i></span>主页</li>
             <li>
               <el-input
                 size="mini"
@@ -91,23 +91,26 @@ export default {
         /* 主容器 */
         /* width: 100%; 设置版心宽度*/
         width: 1500px; 
+        display: flex;
+        justify-content: space-between;
         margin: 0 auto;
         min-width: 960px;
         position: relative;
         height: 34px;
+        line-height: 34px;
         font-size: 22px;
         padding-left: 4px;
         padding-right: 18px;
         border-bottom: 1px solid #777777;
     }
-    .header .leftContent{
+    /* .header .leftContent{
         float: left;
         line-height: 30px;
     }
     .rightContent{
         float: right;
         line-height: 30px;
-    }
+    } */
     .btn-fullscreen{
         transform: rotate(45deg);
         margin-right: 5px;

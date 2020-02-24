@@ -39,6 +39,21 @@ const routes = [
         name: 'roomStatus',
         component: () => import('@/views/pmsb/roomStatus/roomStatus'),
         meta: {title: '房态'}
+      },{
+        path: '/preview',
+        name: 'preview',
+        component: () => import('@/views/pmsb/preview/preview'),
+        meta: {title: '预定'}
+      },{
+        path: '/live',
+        name: 'live',
+        component: () => import('@/views/pmsb/live/live'),
+        meta: {title: '入住'}
+      },{
+        path: '/account',
+        name: 'account',
+        component: () => import('@/views/pmsb/account/account'),
+        meta: {title: '账务'}
       }
     ]
   }

@@ -9,10 +9,10 @@
                 <i class="el-icon-s-goods"></i>
                 <span>房务</span>
             </router-link>
-            <li>
+            <router-link :to="{name: 'account'}" tag="li">
                 <i class="el-icon-s-goods"></i>
                 <span>账务</span>
-            </li>
+            </router-link>
             <li>
                 <i class="el-icon-s-goods"></i>
                 <span>报表</span>
@@ -21,14 +21,14 @@
                 <i class="el-icon-s-goods"></i>
                 <span>制卡</span>
             </li>
-            <li>
+            <router-link :to="{name: 'preview'}" tag="li">
                 <i class="el-icon-s-goods"></i>
                 <span>预定</span>
-            </li>
-            <li>
+            </router-link>
+            <router-link :to="{name: 'live'}" tag="li">
                 <i class="el-icon-s-goods"></i>
                 <span>入住</span>
-            </li>
+            </router-link>
             <li>
                 <i class="el-icon-s-goods"></i>
                 <span>夜审</span>
@@ -36,6 +36,10 @@
             <li>
                 <i class="el-icon-s-goods"></i>
                 <span>交接班</span>
+            </li>
+            <li>
+                <i class="el-icon-s-goods"></i>
+                <span>日志</span>
             </li>
         </ul>
     </div>
