@@ -37,10 +37,10 @@
                 <i class="el-icon-s-goods"></i>
                 <span>交接班</span>
             </li>
-            <li>
+            <router-link :to="{name: 'daily'}" tag="li">
                 <i class="el-icon-s-goods"></i>
                 <span>日志</span>
-            </li>
+            </router-link>
         </ul>
     </div>
 </template>

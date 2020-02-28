@@ -54,6 +54,11 @@ const routes = [
         name: 'account',
         component: () => import('@/views/pmsb/account/account'),
         meta: {title: '账务'}
+      },{
+        path: '/daily',
+        name: 'daily',
+        component: () => import('@/views/pmsb/daily/daily'),
+        meta: {title: '日志'}
       }
     ]
   }
