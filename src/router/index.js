@@ -59,6 +59,30 @@ const routes = [
         name: 'daily',
         component: () => import('@/views/pmsb/daily/daily'),
         meta: {title: '日志'}
+      },
+      {
+        path: '/roomService',
+        name: 'roomService',
+        component: () => import('@/views/pmsb/roomService/roomService'),
+        meta: {title: '房务'}
+      },
+      {
+        path: '/nightAudit',
+        name: 'nightAudit',
+        component: () => import('@/views/pmsb/nightAudit/nightAudit'),
+        meta: {title: '夜审'}
+      },
+      {
+        path: '/report',
+        name: 'report',
+        component: () => import('@/views/pmsb/report/report'),
+        meta: {title: '报表'}
+      },
+      {
+        path: '/guest',
+        name: 'guest',
+        component: () => import('@/views/pmsb/guest/guest'),
+        meta: {title: '宾客'}
       }
     ]
   }
