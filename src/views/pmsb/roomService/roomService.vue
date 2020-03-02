@@ -2,40 +2,53 @@
   <div class="container">
     <el-container style="height: 100%">
         <el-container style="height: 100%">
+          <el-aside width="204px" style="background-color: #fff;border: 2px solid #4488E9;">
+            <div class="little-box">房务种类</div>
+            <el-menu :default-openeds="['1', '2']"  default-active="2" >
+              <el-submenu index="1">
+                <template slot="title">
+                  <span>
+                    1.客房打扫
+                  </span>
+                </template>
+                <el-menu-item-group>
+                  <el-menu-item index="1-1">打扫任务</el-menu-item>
+                  <el-menu-item index="1-2">打扫干净程度设置</el-menu-item>
+                </el-menu-item-group>
+              </el-submenu>
+              <el-submenu index="2">
+                <template slot="title">2.客房查房</template>
+                <el-menu-item-group>
+                  <el-menu-item index="2-1">查房任务</el-menu-item>
+                  <el-menu-item index="2-2">查房内容</el-menu-item>
+                </el-menu-item-group>
+              </el-submenu>
+              <el-menu-item index="3">
+                <span slot="title">3.净房检验</span>
+              </el-menu-item>
+            </el-menu>
+          </el-aside>
           <el-main>
             <div class="el-main-container">
-              <div class="little-box">员工操作日志</div>
+              <div class="little-box">打扫任务</div>
                 <div class="top_content">
-                  <ul class="top_content_wrap">
-                    <li class="li_flag">
-                      <span>员工姓名:</span>
-                      <el-select class="select-flag" v-model="value" placeholder="请选择">
-                        <el-option
-                          v-for="item in options"
-                          :key="item.value"
-                          :label="item.label"
-                          :value="item.value">
-                        </el-option>
-                      </el-select>
-                    </li>
-                    <li class="li_flag li_flag_position">
-                      <span>时间筛选:</span>
-                        <el-select v-model="value" placeholder="请选择">
-                        <el-option
-                          v-for="item in options"
-                          :key="item.value"
-                          :label="item.label"
-                          :value="item.value">
-                        </el-option>
-                      </el-select>
-                    </li>
-                  </ul>
+                  <el-radio-group v-model="radio" size="medium">
+                    <el-radio-button label="已生成" ></el-radio-button>
+                    <el-radio-button label="已下发"></el-radio-button>
+                    <el-radio-button label="执行中"></el-radio-button>
+                    <el-radio-button label="已完成"></el-radio-button>
+                  </el-radio-group>
                 </div>
                 <!-- tabel -->
                  <el-table :header-cell-style="{fontWeight: '400',background: '#CCCCCC', color: 'rgba(34,34,34,1)',textAlign: 'center'}" :data="tableData" style="width: 100%">
-                    <el-table-column prop="date" label="员工" ></el-table-column>
-                    <el-table-column prop="name" label="时间"></el-table-column>
-                    <el-table-column prop="name" label="操作"></el-table-column>
+                    <el-table-column prop="date" label="序号" ></el-table-column>
+                    <el-table-column prop="name" label="后台"></el-table-column>
+                    <el-table-column prop="name" label="后台"></el-table-column>
+                    <el-table-column prop="name" label="后台"></el-table-column>
+                    <el-table-column prop="name" label="后台"></el-table-column>
+                    <el-table-column prop="name" label="后台"></el-table-column>
+                    <el-table-column prop="name" label="后台"></el-table-column>
+                    <el-table-column prop="name" label="后台"></el-table-column>
                 </el-table>
             </div>
           </el-main>
@@ -43,16 +56,8 @@
             <div class="aside-container">
               <ul>
                 <li>
-                  <i class="iconfont icon-renyuandengji"></i>
-                  查询
-                </li>
-                <li>
                   <i class="iconfont icon-weibiaoti-"></i>
                   打印
-                </li>
-                <li>
-                  <i class="iconfont icon-gongan"></i>
-                  导出Excel
                 </li>
               </ul>
             </div>
@@ -71,6 +76,7 @@ export default {
       value: '',
       options: [],
       input1: '',
+      radio: '已生成',
     }
   },
   mounted(){
@@ -81,12 +87,17 @@ export default {
 }
 </script>
 <style scoped>
+  .el-header {
+    background-color: #B3C0D1;
+    color: #333;
+    line-height: 60px;
+  }
   .li_flag>>> .el-input__inner{
-      height: 20px;
-      border: 1px solid #777777;
-      width: 200px;
-      border-radius: 0px;
-    }
+    height: 20px;
+    border: 1px solid #777777;
+    width: 200px;
+    border-radius: 0px;
+  }
   /* .li_flag >>>.el-input__suffix{
     top: 7px;
   } */
@@ -103,6 +114,13 @@ export default {
     width: 100%;
   }
   .container{
+    .little-box{
+      height: 30px;
+      line-height: 30px;
+      color: #FFFFFF;
+      padding-left: 20px;
+      background:rgba(68,136,233,1);
+    }
     height: 100%;
     /* width: 100%; 设置版心宽度*/
     width: 1500px; 
@@ -143,16 +161,14 @@ export default {
     .el-main {
       height: calc(100% - 80px);
       padding: 0px;
-      border:2px solid rgba(68,136,233,1);
+      margin-left: 5px;
+      border:2px solid #8957A1;
       color: #333;
       .el-main-container{
         height: 100%;
         .little-box{
-            position: absolute;
-            width:150px;
             height:30px;
-            background:rgba(68,136,233,1);
-            text-align: center;
+            background:rgba(137,87,161,1);
             line-height: 30px;
             font-size:14px;
             font-family:PingFang SC;
@@ -167,22 +183,7 @@ export default {
             font-weight:400;
             color:rgba(34,34,34,1);
             color: #333;
-            padding-top: 30px;
-            .top_content_wrap{
-              height: 30px;
-              display: flex;
-              align-items: center;
-              .li_flag{
-                span{
-                  width: 80px;
-                }
-                display: flex;
-                align-items: center;
-              }
-              .li_flag_position{
-                margin-left: 20px;
-              }
-            }
+            padding: 5px 3px;
          }
       }
     }
